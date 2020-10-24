@@ -7,7 +7,10 @@ WORKDIR /app
 
 COPY src /app/src
 
-RUN npm run build
+RUN apk --update --no-cache add --virtual build-dependencies git \
+    && npm install \
+    && apk del build-dependencies
+
 CMD npm run start
 
 EXPOSE 4000
