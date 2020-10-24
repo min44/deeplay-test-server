@@ -1,5 +1,5 @@
 import WebSocket from 'ws'
-import { splitedText } from './utils'
+import { getRandomInt, splitedText } from './utils'
 import { deskIds, playerIds } from './data'
 import { getRandomElemenet } from './utils'
 import { config } from './config'
@@ -33,5 +33,5 @@ ws.on('open', () => {
       //   console.log('Message generator send message: ', newMessage)
       ws.send(JSON.stringify(newMessage))
     }
-  }, 3000)
+  }, 500 * getRandomInt(10))
 })

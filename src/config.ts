@@ -1,12 +1,11 @@
 export const config = {
   rethinkdb: {
-    host: '10.60.0.5',
-    port: 28015,
+    host: '35.193.80.13',
+    port: 38015,
     authKey: '',
     db: 'chat',
   },
   websocketServer: {
-    host: 'localhost',
     port: 4000,
   },
 }

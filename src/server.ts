@@ -3,7 +3,7 @@ import r, { Expression, Time } from 'rethinkdb'
 import WebSocket from 'ws'
 import './message-generator'
 
-const wsserver = new WebSocket.Server({ port: config.websocketServer.port, host: config.websocketServer.host })
+const wsserver = new WebSocket.Server({ port: config.websocketServer.port })
 
 interface IMessage {
   jsonrpc: string
