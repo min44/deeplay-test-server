@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm install",
     "dev": "nodemon -L ./src/server.ts",
-    "start": "node ./src/server.ts"
+    "start": "ts-node ./src/server.ts"
   },
   "keywords": [],
   "author": "",

@@ -27,7 +27,7 @@ r.connect(config.rethinkdb, (err, conn) => {
     console.log(err.message)
   } else {
     console.log('Rethinkdb connection successful.')
-    
+
     //check an existance required db and table
     //add function accepts list of required db and tables
     r.dbList().run(rdbConn, (err, result) => {

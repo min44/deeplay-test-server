@@ -7,14 +7,14 @@ import { config } from './config'
 const ws = new WebSocket(`ws://localhost:${config.websocketServer.port}`)
 
 ws.on('open', () => {
-  setTimeout(() => {
+  setInterval(() => {
     const newMessage = {
       jsonrpc: '2.0',
       method: 'getDesk',
       params: { deskId: 'd9bed5a0-74c7-412e-9971-f6218ed519b8' },
     }
     ws.send(JSON.stringify(newMessage))
-  }, 3000)
+  }, 5000)
 
   setInterval(() => {
     const text = getRandomElemenet(splitedText)
@@ -33,5 +33,5 @@ ws.on('open', () => {
       //   console.log('Message generator send message: ', newMessage)
       ws.send(JSON.stringify(newMessage))
     }
-  }, 500 * getRandomInt(10))
+  }, 1000)
 })
