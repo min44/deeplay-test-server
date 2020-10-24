@@ -1,8 +1,8 @@
 import { config } from './config'
-import r, { Expression, Time } from 'rethinkdb'
-import WebSocket from 'ws'
+import { Expression, Time } from 'rethinkdb'
 import './message-generator'
-
+const r = require('rethinkdb')
+const WebSocket = require('ws')
 const wsserver = new WebSocket.Server({ port: config.websocketServer.port })
 
 interface IMessage {
