@@ -1,16 +1,7 @@
 FROM node:latest
-
-ADD package.json /app/package.json
-ADD package-lock.json /app/package-lock.json
-
-WORKDIR /app
-
-COPY src /app/src
-
-# RUN apk --update --no-cache add --virtual build-dependencies git \
-#     && npm install \
-#     && apk del build-dependencies
-
-CMD npm run buld && npm run start
-
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
 EXPOSE 4000
+CMD [ "node", "server.js" ]
