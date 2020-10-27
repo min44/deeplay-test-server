@@ -1,6 +1,6 @@
 export const config = {
   rethinkdb: {
-    host: '35.193.80.13',
+    host: '35.184.247.48',
     port: 38015,
     authKey: '',
     db: 'chat',
